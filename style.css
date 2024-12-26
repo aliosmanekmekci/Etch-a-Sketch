@@ -4,30 +4,60 @@
 
 body {
   background-color: dimgrey;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; 
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(145deg, #4169e1, #6495ed);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(145deg, #6495ed, #4169e1);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 #container {
   display: flex;
   flex-wrap: wrap;
-}
-
-.container > div {
-  border: 1px solid black;
-  height: 25px;
-  width: 25px;
-}
-
-.container > div:nth-child(16n + 1) {
-  width: 100%;
-  border: 0;
-  height: 0;
+  width: 600px;
+  height: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .cell {
+  background-color: bisque;
   display: flex;
-  border: 1px solid black;
-  width: 3rem;
-  height: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: calc(100% / var(--grid-size));
+  height: calc(100% / var(--grid-size));
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+  background-color: cornflowerblue;
 }
