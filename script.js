@@ -12,10 +12,23 @@ function createGrid(size = 16) {
 }
 createGrid();
 
-container.addEventListener("mouseover", (e) => {
+let isMouseDown = false;
+
+container.addEventListener("mousedown", (e) => {
   if (e.target.classList.contains("cell")) {
     e.target.style.backgroundColor = "cornflowerblue";
   }
+  isMouseDown = true;
+});
+
+container.addEventListener("mousemove", (e) => {
+  if (isMouseDown && e.target.classList.contains("cell")) {
+    e.target.style.backgroundColor = "cornflowerblue";
+  }
+});
+
+container.addEventListener("mouseup", () => {
+  isMouseDown = false;
 });
 
 function promptNewGridSize() {
