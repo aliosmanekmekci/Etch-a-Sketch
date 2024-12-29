@@ -27,7 +27,7 @@ container.addEventListener("mousemove", (e) => {
   }
 });
 
-container.addEventListener("mouseup", () => {
+window.addEventListener("mouseup", () => {
   isMouseDown = false;
 });
 
